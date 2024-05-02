@@ -82,5 +82,20 @@ namespace LibraryProject
             Flag = true; // переменной Flag (и, соответственно, добавление книги в список)
             this.Hide(); // и закрытие окна
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddBook_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

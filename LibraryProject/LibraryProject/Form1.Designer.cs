@@ -611,7 +611,7 @@ namespace LibraryProject
             MainMenuStrip = menuStrip1;
             Margin = new Padding(4, 3, 4, 3);
             Name = "Form1";
-            Text = "Информационная система библиотеки";
+            Text = "Библиотека";
             WindowState = FormWindowState.Maximized;
             FormClosing += Form1_FormClosing;
             menuStrip1.ResumeLayout(false);
