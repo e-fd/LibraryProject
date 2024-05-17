@@ -3,7 +3,6 @@ C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-window
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-windows\Library.runtimeconfig.json
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-windows\Library.dll
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-windows\Library.pdb
-C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Form1.resources
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.csproj.GenerateResource.cache
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.AssemblyInfoInputs.cache
@@ -22,6 +21,11 @@ C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-window
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.csproj.AssemblyReference.cache
-C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Form2.resources
-C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Form3.resources
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.csproj.Up2Date
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.AddBook.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.AddUser.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Books.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Main.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Users.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.EventHistory.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.AddEvent.resources

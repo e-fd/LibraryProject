@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -51,6 +51,7 @@
             button2.TabIndex = 1;
             button2.Text = "Пользователи";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -60,8 +61,9 @@
             button3.TabIndex = 2;
             button3.Text = "История пользования";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
-            // Form1
+            // Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -69,7 +71,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Name = "Form1";
+            Name = "Main";
             Text = "Главное меню";
             ResumeLayout(false);
         }

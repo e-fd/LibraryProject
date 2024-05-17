@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class Form4 : Form
+    public partial class AddEvent : Form
     {
-        public Form4()
+        public AddEvent()
         {
             InitializeComponent();
         }

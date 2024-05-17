@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\class.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\addbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\addbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\users.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\users.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,23 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form4.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form4.cs",
-              "RelativeDocumentMoniker": "Library\\Form4.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form4.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "Library\\Form4.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-11T17:03:12.221Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
             },
             {
               "$type": "Bookmark",
@@ -59,55 +47,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form3.cs",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form3.cs",
-              "RelativeDocumentMoniker": "Library\\Form3.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form3.cs",
-              "RelativeToolTip": "Library\\Form3.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Title": "AddBook.cs",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\AddBook.cs",
+              "RelativeDocumentMoniker": "Library\\AddBook.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\AddBook.cs",
+              "RelativeToolTip": "Library\\AddBook.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABoAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T21:40:35.598Z",
+              "WhenOpened": "2024-05-16T17:12:58.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form3.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form3.cs",
-              "RelativeDocumentMoniker": "Library\\Form3.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form3.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "Library\\Form3.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentIndex": 1,
+              "Title": "Class.cs",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Class.cs",
+              "RelativeDocumentMoniker": "Library\\Class.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Class.cs",
+              "RelativeToolTip": "Library\\Class.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA/wBsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T20:51:27.045Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form2.cs",
-              "RelativeDocumentMoniker": "Library\\Form2.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form2.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "Library\\Form2.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T20:50:24.365Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form2.cs",
-              "RelativeDocumentMoniker": "Library\\Form2.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form2.cs",
-              "RelativeToolTip": "Library\\Form2.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAmwB4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T17:19:02.444Z",
+              "WhenOpened": "2024-05-16T17:00:24.377Z",
               "EditorCaption": ""
             },
             {
@@ -115,16 +75,58 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
+              "RelativeDocumentMoniker": "Library\\Books.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "Library\\Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T17:57:49.986Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Books.cs",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
+              "RelativeDocumentMoniker": "Library\\Books.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
+              "RelativeToolTip": "Library\\Books.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAowFwAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T17:19:02.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Users.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Users.cs",
+              "RelativeDocumentMoniker": "Library\\Users.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Users.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "Library\\Users.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T17:03:12.221Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form1.cs",
-              "RelativeDocumentMoniker": "Library\\Form1.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Form1.cs [Design]",
-              "RelativeToolTip": "Library\\Form1.cs [Design]",
+              "Title": "Users.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Users.Designer.cs",
+              "RelativeDocumentMoniker": "Library\\Users.Designer.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Users.Designer.cs",
+              "RelativeToolTip": "Library\\Users.Designer.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAYwGQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T20:31:38.388Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-15T17:14:35.319Z",
+              "EditorCaption": ""
             }
           ]
         },
