@@ -230,6 +230,7 @@ namespace Library
             // 
             // listView1
             // 
+            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.Location = new Point(465, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(476, 651);

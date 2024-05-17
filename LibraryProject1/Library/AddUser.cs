@@ -24,7 +24,7 @@ namespace Library
         {
             try
             {
-                string_con.ConnectionString = "Server=X923;Database=LibraryProject;Trusted_Connection=True;";
+                string_con.ConnectionString = "Server=X923;Database=LibraryProject1;Trusted_Connection=True;";
                 string_con.Open();
                 string sql = "INSERT INTO Users " +
                 "(Login,Name,Phone,Address) " +

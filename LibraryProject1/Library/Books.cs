@@ -13,6 +13,8 @@ namespace Library
 {
     public partial class Books : Form
     {
+        bool mHasException;
+        Exception mLastException;
         private bool isCollapsed;
         public Books()
         {
@@ -67,7 +69,7 @@ namespace Library
             (
                 var cn = new SqlConnection()
                 {
-                    ConnectionString = "Server=X923;Database=LibraryProject;Trusted_Connection=True;"
+                    ConnectionString = "Server=X923;Database=LibraryProject1;Trusted_Connection=True;"
                 }
             )
             {
@@ -81,18 +83,18 @@ namespace Library
                         while (reader.Read())
                         {
                             bookInfo.Add(new Book()
-                                    {
-                                        Id = reader.GetInt32(0),
-                                        Title = reader.GetString(1),
-                                        Author = reader.GetString(2),
-                                        Genre = reader.GetString(3),
-                                        Type = reader.GetString(4),
-                                        Year = reader.GetString(5),
-                                        Publisher = reader.GetString(6),
-                                        Count = reader.GetString(7),
-                                        ISBN = reader.GetString(8),
-                                        Summary = reader.GetString(9)
-                                    });
+                            {
+                                Id = reader.GetInt32(0),
+                                Title = reader.GetString(1),
+                                Author = reader.GetString(2),
+                                Genre = reader.GetString(3),
+                                Type = reader.GetString(4),
+                                Year = reader.GetString(5),
+                                Publisher = reader.GetString(6),
+                                Count = reader.GetString(7),
+                                ISBN = reader.GetString(8),
+                                Summary = reader.GetString(9)
+                            });
                         }
 
                     }
