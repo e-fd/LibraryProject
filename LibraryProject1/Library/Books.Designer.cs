@@ -51,6 +51,7 @@ namespace Library
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             listView1 = new ListView();
+            button5 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -237,17 +238,28 @@ namespace Library
             listView1.TabIndex = 12;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // button5
+            // 
+            button5.Location = new Point(401, 494);
+            button5.Name = "button5";
+            button5.Size = new Size(42, 39);
+            button5.TabIndex = 13;
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Books
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 675);
+            Controls.Add(button5);
             Controls.Add(listView1);
             Controls.Add(panel1);
             Controls.Add(button1);
             Name = "Books";
             Text = "Книги";
             WindowState = FormWindowState.Maximized;
+            Load += Books_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -277,5 +289,6 @@ namespace Library
         private ComboBox comboBox2;
         private ComboBox comboBox1;
         private ListView listView1;
+        private Button button5;
     }
 }
