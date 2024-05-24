@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using System.Data.SqlClient;
-using System.Collections;
+﻿using System.Data.SqlClient;
 
 namespace Library
 {
@@ -25,22 +14,22 @@ namespace Library
         {
             try
             {
-                int ID = 3;
-                string_con.ConnectionString = "Server=X923;Database=LibraryProject1;Trusted_Connection=True;";
-                //opening connection
+                string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;");
+                sql_command = new SqlCommand("select top (1) [BookID] FROM [LibraryProject1].[dbo].[Books] order by [BookID] desc", string_con);
                 string_con.Open();
-                //create an insert query;
+                SqlDataReader reader = sql_command.ExecuteReader();
+                int BookID = Int32.Parse(reader.GetString(0)) + 1;
                 string sql = "INSERT INTO Books " +
                 "(BookID,Title,Author,Genre,Type,Count,Year,Publisher,ISBN,Summary) " +
-                "VALUES ('" + ID.ToString() + "','" +
+                "VALUES ('" + BookID.ToString() + "','"
                 //"(@BookID,@Title,@Author,@Genre,@Type,@Count,@Year," +
                 //"@Publisher,@ISBN,@Summary);";
-                textBox1.Text + "','" + textBox2.Text +
+                + textBox1.Text + "','" + textBox2.Text +
                 "','" + comboBox1.Text + "','" + comboBox2.Text +
                 "','" + textBox5.Text + "','" + textBox6.Text +
                 "','" + textBox7.Text + "','" + textBox8.Text +
                 "','" + richTextBox1.Text + "');";
-                string sql1 = "insert into Books(BookID,Title) values ('" + ID.ToString() +"','" + textBox1.Text + "')";
+                string sql1 = "insert into Books(BookID,Title) values ('" + BookID.ToString() + "','" + textBox1.Text + "')";
 
                 //using (SqlCommand cmd = new SqlCommand(sql, string_con))
                 //{
@@ -56,7 +45,6 @@ namespace Library
                 //    cmd.Parameters.Add("@ISBN", SqlDbType.VarChar).Value = textBox8.Text;
                 //    cmd.Parameters.Add("@Summary", SqlDbType.VarChar).Value = richTextBox1.Text;
 
-                //    //rest of the code
                 //}
                 sql_command = new SqlCommand(sql1, string_con);
                 sql_command.ExecuteNonQuery();
@@ -67,6 +55,11 @@ namespace Library
             {
                 MessageBox.Show(ex.Message);
             }
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             this.Hide();
         }
     }

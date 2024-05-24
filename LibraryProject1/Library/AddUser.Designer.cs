@@ -37,6 +37,7 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label1 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -113,11 +114,22 @@
             label1.TabIndex = 19;
             label1.Text = "Логин";
             // 
+            // button2
+            // 
+            button2.Location = new Point(275, 216);
+            button2.Name = "button2";
+            button2.Size = new Size(90, 29);
+            button2.TabIndex = 51;
+            button2.Text = "Отмена";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // AddUser
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(482, 253);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox5);
             Controls.Add(label5);
@@ -144,5 +156,6 @@
         private Label label2;
         private TextBox textBox1;
         private Label label1;
+        private Button button2;
     }
 }

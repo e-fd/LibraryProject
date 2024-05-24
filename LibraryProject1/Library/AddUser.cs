@@ -24,7 +24,7 @@ namespace Library
         {
             try
             {
-                string_con.ConnectionString = "Server=X923;Database=LibraryProject1;Trusted_Connection=True;";
+                string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;");
                 string_con.Open();
                 string sql = "INSERT INTO Users " +
                 "(Login,Name,Phone,Address) " +
@@ -39,6 +39,11 @@ namespace Library
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

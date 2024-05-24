@@ -47,6 +47,7 @@
             button1 = new Button();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -206,11 +207,22 @@
             comboBox2.Size = new Size(453, 28);
             comboBox2.TabIndex = 20;
             // 
+            // button2
+            // 
+            button2.Location = new Point(275, 582);
+            button2.Name = "button2";
+            button2.Size = new Size(90, 29);
+            button2.TabIndex = 51;
+            button2.Text = "Отмена";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // AddBook
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(477, 619);
+            Controls.Add(button2);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(button1);
@@ -257,5 +269,6 @@
         private Button button1;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private Button button2;
     }
 }

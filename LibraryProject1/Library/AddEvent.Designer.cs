@@ -40,6 +40,7 @@
             textBox1 = new TextBox();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -138,11 +139,22 @@
             dateTimePicker1.Size = new Size(180, 27);
             dateTimePicker1.TabIndex = 49;
             // 
+            // button2
+            // 
+            button2.Location = new Point(275, 277);
+            button2.Name = "button2";
+            button2.Size = new Size(90, 29);
+            button2.TabIndex = 50;
+            button2.Text = "Отмена";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // AddEvent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(802, 454);
+            Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(button1);
             Controls.Add(textBox5);
@@ -175,5 +187,6 @@
         private TextBox textBox1;
         private Label label1;
         private DateTimePicker dateTimePicker1;
+        private Button button2;
     }
 }

@@ -28,16 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
             button3 = new Button();
             button2 = new Button();
             textBox2 = new TextBox();
             label2 = new Label();
             textBox1 = new TextBox();
             label1 = new Label();
-            listBox1 = new ListBox();
-            button1 = new Button();
             textBox3 = new TextBox();
             label3 = new Label();
+            listView1 = new ListView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            button5 = new Button();
+            imageList1 = new ImageList(components);
+            button6 = new Button();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // button3
@@ -90,25 +99,6 @@
             label1.TabIndex = 11;
             label1.Text = "ФИО";
             // 
-            // listBox1
-            // 
-            listBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(461, 12);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(480, 624);
-            listBox1.TabIndex = 10;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(345, 464);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 28);
-            button1.TabIndex = 9;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // textBox3
             // 
             textBox3.Location = new Point(12, 138);
@@ -125,11 +115,83 @@
             label3.TabIndex = 18;
             label3.Text = "Номер телефона";
             // 
-            // Form4
+            // listView1
+            // 
+            listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listView1.ContextMenuStrip = contextMenuStrip1;
+            listView1.Location = new Point(461, 12);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(476, 651);
+            listView1.TabIndex = 20;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.ItemSelectionChanged += listView1_ItemSelectionChanged;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            listView1.MouseClick += listView1_MouseClick;
+            listView1.MouseHover += listView1_MouseHover;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(148, 76);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(147, 24);
+            toolStripMenuItem1.Text = "Добавить";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(147, 24);
+            toolStripMenuItem2.Text = "Изменить";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(147, 24);
+            toolStripMenuItem3.Text = "Удалить";
+            // 
+            // button5
+            // 
+            button5.ImageIndex = 0;
+            button5.ImageList = imageList1;
+            button5.Location = new Point(413, 241);
+            button5.Name = "button5";
+            button5.Size = new Size(42, 42);
+            button5.TabIndex = 21;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "update.png");
+            // 
+            // button6
+            // 
+            button6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button6.Location = new Point(12, 634);
+            button6.Name = "button6";
+            button6.Size = new Size(152, 29);
+            button6.TabIndex = 42;
+            button6.Text = "Обратно в Меню";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // Users
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(953, 675);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(listView1);
             Controls.Add(textBox3);
             Controls.Add(label3);
             Controls.Add(button3);
@@ -138,10 +200,10 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(listBox1);
-            Controls.Add(button1);
-            Name = "Form4";
+            Name = "Users";
             Text = "Пользователи";
+            WindowState = FormWindowState.Maximized;
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,9 +215,15 @@
         private Label label2;
         private TextBox textBox1;
         private Label label1;
-        private ListBox listBox1;
-        private Button button1;
         private TextBox textBox3;
         private Label label3;
+        private ListView listView1;
+        private Button button5;
+        private ImageList imageList1;
+        private Button button6;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
     }
 }

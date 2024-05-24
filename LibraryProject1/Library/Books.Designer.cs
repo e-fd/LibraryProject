@@ -31,13 +31,15 @@ namespace Library
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            button1 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Books));
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
             button4 = new Button();
             panel1 = new Panel();
+            button5 = new Button();
+            imageList1 = new ImageList(components);
             button3 = new Button();
             button2 = new Button();
             panel2 = new Panel();
@@ -51,20 +53,15 @@ namespace Library
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             listView1 = new ListView();
-            button5 = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            button6 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Location = new Point(357, 542);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 28);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // label1
             // 
@@ -110,6 +107,7 @@ namespace Library
             // 
             // panel1
             // 
+            panel1.Controls.Add(button5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(panel2);
@@ -118,9 +116,29 @@ namespace Library
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(-5, 12);
+            panel1.MaximumSize = new Size(460, 476);
+            panel1.MinimumSize = new Size(460, 265);
             panel1.Name = "panel1";
-            panel1.Size = new Size(460, 459);
+            panel1.Size = new Size(460, 265);
             panel1.TabIndex = 11;
+            // 
+            // button5
+            // 
+            button5.ImageIndex = 0;
+            button5.ImageList = imageList1;
+            button5.Location = new Point(409, 220);
+            button5.Name = "button5";
+            button5.Size = new Size(42, 42);
+            button5.TabIndex = 13;
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "update.png");
             // 
             // button3
             // 
@@ -232,44 +250,69 @@ namespace Library
             // listView1
             // 
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listView1.ContextMenuStrip = contextMenuStrip1;
             listView1.Location = new Point(465, 12);
             listView1.Name = "listView1";
-            listView1.Size = new Size(476, 651);
+            listView1.Size = new Size(463, 653);
             listView1.TabIndex = 12;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button5
+            // contextMenuStrip1
             // 
-            button5.Location = new Point(401, 494);
-            button5.Name = "button5";
-            button5.Size = new Size(42, 39);
-            button5.TabIndex = 13;
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(148, 76);
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(147, 24);
+            toolStripMenuItem1.Text = "Добавить";
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(147, 24);
+            toolStripMenuItem2.Text = "Изменить";
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(147, 24);
+            toolStripMenuItem3.Text = "Удалить";
+            // 
+            // button6
+            // 
+            button6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button6.Location = new Point(12, 636);
+            button6.Name = "button6";
+            button6.Size = new Size(152, 29);
+            button6.TabIndex = 42;
+            button6.Text = "Обратно в Меню";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // Books
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(953, 675);
-            Controls.Add(button5);
+            ClientSize = new Size(940, 677);
+            Controls.Add(button6);
             Controls.Add(listView1);
             Controls.Add(panel1);
-            Controls.Add(button1);
             Name = "Books";
             Text = "Книги";
             WindowState = FormWindowState.Maximized;
-            Load += Books_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
         private Label label1;
         private TextBox textBox1;
         private TextBox textBox2;
@@ -290,5 +333,11 @@ namespace Library
         private ComboBox comboBox1;
         private ListView listView1;
         private Button button5;
+        private ImageList imageList1;
+        private Button button6;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
     }
 }
