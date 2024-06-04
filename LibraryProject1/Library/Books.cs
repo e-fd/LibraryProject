@@ -95,7 +95,7 @@ namespace Library
             timer1.Start();
         }
 
-        public List<Book> GetBooks()
+        /*public List<Book> GetBooks()
         {
             var bookInfo = new List<Book>();
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
@@ -127,7 +127,7 @@ namespace Library
                 string_con.Close();
             }
             return bookInfo;
-        }
+        }*/
 
         private void button5_Click(object sender, EventArgs e)
         {

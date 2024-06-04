@@ -2,14 +2,14 @@
 
 namespace Library
 {
-    public partial class EditBook : Form
+    public partial class EditUser : Form
     {
         SqlConnection string_con = new SqlConnection();
         SqlCommand sql_command = new SqlCommand();
         SqlDataReader reader;
         string index;
         string sql;
-        public EditBook(string dbIndex)
+        public EditUser(string dbIndex)
         {
             InitializeComponent();
             index = dbIndex;
@@ -17,7 +17,7 @@ namespace Library
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();
-                using (sql_command = new SqlCommand($"select Title,Author,Genre,Type,Year,Publisher,Count,ISBN,Summary from Books where BookID={dbIndex}", string_con))
+                using (sql_command = new SqlCommand($"select Login,Name,Phone,Address from Users where UserID={dbIndex}", string_con))
                 {
                     using (reader = sql_command.ExecuteReader())
                     {
@@ -33,31 +33,11 @@ namespace Library
                             }
                             if ((tmp = reader.GetValue(2)) != null)
                             {
-                                comboBox1.Text = tmp.ToString();
+                                textBox4.Text = tmp.ToString();
                             }
                             if ((tmp = reader.GetValue(3)) != null)
                             {
-                                comboBox2.Text = tmp.ToString();
-                            }
-                            if ((tmp = reader.GetValue(4)) != null)
-                            {
                                 textBox5.Text = tmp.ToString();
-                            }
-                            if ((tmp = reader.GetValue(5)) != null)
-                            {
-                                textBox6.Text = tmp.ToString();
-                            }
-                            if ((tmp = reader.GetValue(6)) != null)
-                            {
-                                textBox7.Text = tmp.ToString();
-                            }
-                            if ((tmp = reader.GetValue(7)) != null)
-                            {
-                                textBox8.Text = tmp.ToString();
-                            }
-                            if ((tmp = reader.GetValue(8)) != null)
-                            {
-                                richTextBox1.Text = tmp.ToString();
                             }
                         }
                     }
@@ -68,11 +48,9 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sql = "UPDATE Books " +
-            "SET Title = '" + textBox1.Text + "', Author = '" + textBox2.Text + "', Genre = '" 
-            + comboBox1.Text + "', Type = '" + comboBox2.Text + "', Count = '" + textBox5.Text 
-            + "', Year = '" + textBox6.Text + "', Publisher = '" + textBox7.Text + "', ISBN = '" 
-            + textBox8.Text + "', Summary = '" + richTextBox1.Text + "' WHERE BookID=" + index + ";";
+            sql = "UPDATE Users " +
+            "SET Login = '" + textBox1.Text + "', Name = '" + textBox2.Text + "', Phone = '"
+            + textBox4.Text + "', Address = '" + textBox5.Text + "' WHERE UserID=" + index + ";";
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();

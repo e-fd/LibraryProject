@@ -38,7 +38,6 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label1 = new Label();
-            button1 = new Button();
             listView1 = new ListView();
             contextMenuStrip1 = new ContextMenuStrip(components);
             toolStripMenuItem1 = new ToolStripMenuItem();
@@ -138,19 +137,11 @@
             label1.TabIndex = 22;
             label1.Text = "ФИО";
             // 
-            // button1
-            // 
-            button1.Location = new Point(346, 490);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 28);
-            button1.TabIndex = 20;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // listView1
             // 
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.ContextMenuStrip = contextMenuStrip1;
+            listView1.GridLines = true;
             listView1.Location = new Point(465, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(484, 802);
@@ -162,7 +153,7 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(148, 76);
+            contextMenuStrip1.Size = new Size(211, 104);
             // 
             // toolStripMenuItem1
             // 
@@ -174,14 +165,16 @@
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(147, 24);
+            toolStripMenuItem2.Size = new Size(210, 24);
             toolStripMenuItem2.Text = "Изменить";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(147, 24);
+            toolStripMenuItem3.Size = new Size(210, 24);
             toolStripMenuItem3.Text = "Удалить";
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // label4
             // 
@@ -274,9 +267,9 @@
             // 
             button4.Location = new Point(3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(108, 29);
+            button4.Size = new Size(152, 29);
             button4.TabIndex = 8;
-            button4.Text = "button4";
+            button4.Text = "Ешё параметры...";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -409,7 +402,6 @@
             Controls.Add(listView1);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
             Name = "EventHistory";
             Text = "История пользования";
             WindowState = FormWindowState.Maximized;
@@ -432,7 +424,6 @@
         private Label label2;
         private TextBox textBox1;
         private Label label1;
-        private Button button1;
         private ListView listView1;
         private Label label4;
         private DateTimePicker dateTimePicker1;

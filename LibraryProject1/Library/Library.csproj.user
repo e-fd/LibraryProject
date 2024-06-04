@@ -10,6 +10,9 @@
     <Compile Update="EditBook.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EventHistory.cs">
       <SubType>Form</SubType>
     </Compile>

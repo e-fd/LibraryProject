@@ -57,6 +57,7 @@
             button3.TabIndex = 16;
             button3.Text = "Очистить параметры поиска";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -66,6 +67,7 @@
             button2.TabIndex = 15;
             button2.Text = "Поиск";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox2
             // 
@@ -119,15 +121,12 @@
             // 
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.ContextMenuStrip = contextMenuStrip1;
+            listView1.GridLines = true;
             listView1.Location = new Point(461, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(476, 651);
             listView1.TabIndex = 20;
             listView1.UseCompatibleStateImageBehavior = false;
-            listView1.ItemSelectionChanged += listView1_ItemSelectionChanged;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
-            listView1.MouseClick += listView1_MouseClick;
-            listView1.MouseHover += listView1_MouseHover;
             // 
             // contextMenuStrip1
             // 
@@ -155,6 +154,7 @@
             toolStripMenuItem3.Name = "toolStripMenuItem3";
             toolStripMenuItem3.Size = new Size(147, 24);
             toolStripMenuItem3.Text = "Удалить";
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // button5
             // 
@@ -165,6 +165,7 @@
             button5.Size = new Size(42, 42);
             button5.TabIndex = 21;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // imageList1
             // 

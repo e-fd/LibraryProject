@@ -8,7 +8,7 @@ namespace Library
         SqlCommand sql_command = new SqlCommand();
         SqlCommand sql_command1 = new SqlCommand();
         SqlDataReader reader;
-        static string stringID;
+        static string strBookID;
         public AddBook()
         {
             InitializeComponent();
@@ -29,12 +29,12 @@ namespace Library
                             while (reader.Read())
                             {
                                 BookID = Int32.Parse(reader.GetString(0)) + 1;
-                                stringID = BookID.ToString();
+                                strBookID = BookID.ToString();
                             }
                         }
                         sql = "INSERT INTO Books " +
                         "(BookID,Title,Author,Genre,Type,Count,Year,Publisher,ISBN,Summary) " +
-                        "VALUES ('" + stringID + "','"
+                        "VALUES ('" + strBookID + "','"
                         + textBox1.Text + "','" + textBox2.Text +
                         "','" + comboBox1.Text + "','" + comboBox2.Text +
                         "','" + textBox5.Text + "','" + textBox6.Text +
@@ -52,7 +52,7 @@ namespace Library
             {
                 MessageBox.Show(ex.Message);
             }
-            this.Hide();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
