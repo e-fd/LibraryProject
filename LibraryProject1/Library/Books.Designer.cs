@@ -99,9 +99,9 @@ namespace Library
             // 
             button4.Location = new Point(3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(108, 29);
+            button4.Size = new Size(143, 29);
             button4.TabIndex = 8;
-            button4.Text = "button4";
+            button4.Text = "Ещё параметры...";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -115,7 +115,7 @@ namespace Library
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(-5, 12);
+            panel1.Location = new Point(-1, 12);
             panel1.MaximumSize = new Size(460, 476);
             panel1.MinimumSize = new Size(460, 265);
             panel1.Name = "panel1";
@@ -148,6 +148,7 @@ namespace Library
             button3.TabIndex = 18;
             button3.Text = "Очистить параметры поиска";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -157,6 +158,7 @@ namespace Library
             button2.TabIndex = 17;
             button2.Text = "Поиск";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // panel2
             // 
@@ -251,6 +253,7 @@ namespace Library
             // 
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.ContextMenuStrip = contextMenuStrip1;
+            listView1.GridLines = true;
             listView1.Location = new Point(465, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(463, 653);
@@ -269,18 +272,21 @@ namespace Library
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(147, 24);
             toolStripMenuItem1.Text = "Добавить";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(147, 24);
             toolStripMenuItem2.Text = "Изменить";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
             toolStripMenuItem3.Size = new Size(147, 24);
             toolStripMenuItem3.Text = "Удалить";
+            toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // button6
             // 

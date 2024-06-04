@@ -1,4 +1,34 @@
-﻿using System.Data.SqlClient;
+﻿/*
+SqlConnection string_con = new SqlConnection();
+SqlCommand sql_command = new SqlCommand();
+SqlDataReader reader;
+ */
+
+/*
+using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+{
+    string_con.Open();
+    using (sql_command = new SqlCommand("", string_con))
+    {
+        using (reader = sql_command.ExecuteReader())
+        {
+            
+        }
+    }
+    string_con.Close();
+}
+*/
+
+/*
+using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+{
+    string_con.Open();
+    updateBookListView();
+    string_con.Close();
+} 
+*/
+
+using System.Data.SqlClient;
 
 namespace Library
 {
@@ -6,15 +36,11 @@ namespace Library
     {
         SqlConnection string_con = new SqlConnection();
         SqlCommand sql_command = new SqlCommand();
-
-        //private bool mHasException;
-        //private Exception mLastException;
+        SqlDataReader reader;
         private bool isCollapsed;
         public Books()
         {
             InitializeComponent();
-            string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;");
-            sql_command = new SqlCommand("select * from Books", string_con);
             listView1.Columns.Clear();
             listView1.Columns.Add("№", 70);
             listView1.Columns.Add("Название", 140);
@@ -26,40 +52,12 @@ namespace Library
             listView1.Columns.Add("Количество", 100);
             listView1.Columns.Add("ISBN", 140);
             listView1.Columns.Add("Аннотация", 200);
-            listView1.View = View.Details;
-
-            listView1.Items.Clear();
-            int i = 0;
-
-            string_con.Open();
-            SqlDataReader reader = sql_command.ExecuteReader();
-            object tmp;
-
-            while (reader.HasRows)
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
-                while (reader.Read())
-                {
-                    if ((tmp = reader.GetValue(0)) != null)
-                    {
-                        listView1.Items.Add(tmp.ToString());
-                    }
-                    if ((tmp = reader.GetValue(1)) != null)
-                    {
-                        //for (int j = 0; j < 10; j++)
-                        listView1.Items[i].SubItems.Add(tmp.ToString());
-                    }
-                    i++;
-                }
-                reader.NextResult();
+                string_con.Open();
+                updateBookListView();
+                string_con.Close();
             }
-            string_con.Close();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddBook form3 = new AddBook();
-            form3.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -96,29 +94,17 @@ namespace Library
         {
             timer1.Start();
         }
+
         public List<Book> GetBooks()
         {
-            //mHasException = false;
             var bookInfo = new List<Book>();
-
-            var selectStatement =
-                @"SELECT BookID,Title,Author,Genre,Type,Year,Publisher," +
-                "Count,ISBN,Summary FROM Books";
-            using
-            (
-                var cn = new SqlConnection()
-                {
-                    ConnectionString = "Server=X923;Database=LibraryProject1;Trusted_Connection=True;"
-                }
-            )
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
-                using (var cmd = new SqlCommand() { Connection = cn })
+                string_con.Open();
+                using (sql_command = new SqlCommand("SELECT BookID,Title,Author,Genre,Type,Year,Publisher,Count,ISBN,Summary FROM Books", string_con))
                 {
-                    try
+                    using (reader = sql_command.ExecuteReader())
                     {
-                        cn.Open();
-                        cmd.CommandText = selectStatement;
-                        var reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
                             bookInfo.Add(new Book()
@@ -137,12 +123,8 @@ namespace Library
                         }
 
                     }
-                    catch (Exception e)
-                    {
-                        //mHasException = true;
-                        //mLastException = e;
-                    }
                 }
+                string_con.Close();
             }
             return bookInfo;
         }
@@ -160,14 +142,184 @@ namespace Library
             listView1.Columns.Add("Количество", 100);
             listView1.Columns.Add("ISBN", 140);
             listView1.Columns.Add("Аннотация", 200);
-            listView1.View = View.Details;
-
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                string_con.Open();
+                updateBookListView();
+                string_con.Close();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AddBook form10 = new AddBook();
+            DialogResult form10Closed = form10.ShowDialog();
+            if (form10Closed != DialogResult.None)
+            {
+                using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+                {
+                    string_con.Open();
+                    updateBookListView();
+                    string_con.Close();
+                }
+            }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                EditBook form11 = new EditBook(selectedItem.Text);
+                DialogResult form11Closed = form11.ShowDialog();
+                if (form11Closed != DialogResult.None)
+                {
+                    using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+                    {
+                        string_con.Open();
+                        updateBookListView();
+                        string_con.Close();
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                if (listView1.SelectedItems.Count > 0)
+                {
+                    //int temp = listView1.SelectedItems[0].Index;
+                    int temp = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                    sql_command = new SqlCommand($"delete from Books where BookID={temp + 1}", string_con);
+                    string_con.Open();
+                    sql_command.ExecuteNonQuery();
+                    string_con.Close();
+                }
+                string_con.Open();
+                updateBookListView();
+                string_con.Close();
+            }
+        }
+
+        public void updateBookListView()
+        {
+            using (sql_command = new SqlCommand("select * from Books", string_con))
+            {
+                using (reader = sql_command.ExecuteReader())
+                {
+                    ListViewItem tmp;
+                    listView1.Items.Clear();
+                    while (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            tmp = listView1.Items.Add(reader[0].ToString());
+                            for (int i = 1; i < 10; i++)
+                            {
+                                tmp.SubItems.Add(reader[i].ToString());
+                            }
+                        }
+                        reader.NextResult();
+                    }
+                }
+            }
+            listView1.View = View.Details;
+        }
+
+        public void readQueryResult()
+        {
+            using (reader = sql_command.ExecuteReader())
+            {
+                ListViewItem tmp;
+                listView1.Items.Clear();
+                while (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        tmp = listView1.Items.Add(reader[0].ToString());
+                        for (int i = 1; i < 10; i++)
+                        {
+                            tmp.SubItems.Add(reader[i].ToString());
+                        }
+                    }
+                    reader.NextResult();
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                string_con.Open();
+                if (textBox1.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Title as nvarchar(100)) = '{textBox1.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox2.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Author as nvarchar(100)) = '{textBox2.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (comboBox1.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Genre as nvarchar(100)) = '{comboBox1.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (comboBox2.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Type as nvarchar(100)) = '{comboBox2.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox5.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Year as nvarchar(100)) = '{textBox5.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox6.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select * from Books where cast (ISBN as nvarchar(100)) = '{textBox6.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                string_con.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            comboBox1.Text = "";
+            comboBox2.Text = "";
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                string_con.Open();
+                updateBookListView();
+                string_con.Close();
+            }
+        }
     }
 }

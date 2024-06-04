@@ -4,13 +4,16 @@
     <Compile Update="AddEvent.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EventHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Books.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AddBook.cs">

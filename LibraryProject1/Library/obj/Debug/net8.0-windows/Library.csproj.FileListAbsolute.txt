@@ -30,3 +30,4 @@ C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-window
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.EventHistory.resources
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.AddEvent.resources
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Properties.Resources.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.EditBook.resources
