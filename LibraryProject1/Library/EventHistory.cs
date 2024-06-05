@@ -48,6 +48,12 @@ namespace Library
             listView1.Columns.Add("Логин", 100);
             listView1.Columns.Add("Номер телефона", 100);
             listView1.Columns.Add("Дата", 140);
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                string_con.Open();
+                updateEventListView();
+                string_con.Close();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,7 +97,7 @@ namespace Library
 
         public void updateEventListView()
         {
-            using (sql_command = new SqlCommand("", string_con))
+            using (sql_command = new SqlCommand("select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID", string_con))
             {
                 using (reader = sql_command.ExecuteReader())
                 {
@@ -114,21 +120,158 @@ namespace Library
             listView1.View = View.Details;
         }
 
+        public void readQueryResult()
+        {
+            using (reader = sql_command.ExecuteReader())
+            {
+                ListViewItem tmp;
+                listView1.Items.Clear();
+                while (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        tmp = listView1.Items.Add(reader[0].ToString());
+                        for (int i = 1; i < 7; i++)
+                        {
+                            tmp.SubItems.Add(reader[i].ToString());
+                        }
+                    }
+                    reader.NextResult();
+                }
+            }
+        }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             AddEvent form9 = new AddEvent();
-            form9.ShowDialog();
+            DialogResult form9Closed = form9.ShowDialog();
+            if (form9Closed != DialogResult.None)
+            {
+                using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+                {
+                    string_con.Open();
+                    updateEventListView();
+                    string_con.Close();
+                }
+            }
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                EditEvent form13 = new EditEvent(selectedItem.Text);
+                DialogResult form13Closed = form13.ShowDialog();
+                if (form13Closed != DialogResult.None)
+                {
+                    using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+                    {
+                        string_con.Open();
+                        updateEventListView();
+                        string_con.Close();
+                    }
+                }
+            }
+            catch { }
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                if (listView1.SelectedItems.Count > 0)
+                {
+                    //int temp = listView1.SelectedItems[0].Index;
+                    int temp = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+                    sql_command = new SqlCommand($"delete from Events where EventID={temp + 1}", string_con);
+                    string_con.Open();
+                    sql_command.ExecuteNonQuery();
+                    string_con.Close();
+                }
+                string_con.Open();
+                updateEventListView();
+                string_con.Close();
+            }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                string_con.Open();
+                if (textBox1.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (TItle as nvarchar(100)) = '{textBox1.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox2.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Author as nvarchar(100)) = '{textBox2.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox3.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Name as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox3.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Login as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox3.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Phone as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox3.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Address as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+                if (textBox3.Text.Length > 0)
+                {
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Date as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    {
+                        readQueryResult();
+                    }
+                }
+
+                string_con.Close();
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            dateTimePicker1.Value = DateTime.Now;
+            using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
+            {
+                string_con.Open();
+                updateEventListView();
+                string_con.Close();
+            }
         }
     }
 }

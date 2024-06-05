@@ -92,6 +92,7 @@ namespace Library
             }
             catch { }
         }
+
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
@@ -109,7 +110,6 @@ namespace Library
                 updateUserListView();
                 string_con.Close();
             }
-
         }
 
         public void updateUserListView()
@@ -215,7 +215,6 @@ namespace Library
                 updateUserListView();
                 string_con.Close();
             }
-
         }
     }
 }

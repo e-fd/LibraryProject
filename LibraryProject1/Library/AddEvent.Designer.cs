@@ -51,6 +51,7 @@
             button1.TabIndex = 48;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBox5
             // 
@@ -112,9 +113,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 62);
             label2.Name = "label2";
-            label2.Size = new Size(42, 20);
+            label2.Size = new Size(51, 20);
             label2.TabIndex = 40;
-            label2.Text = "ФИО";
+            label2.Text = "Автор";
             // 
             // textBox1
             // 
@@ -128,9 +129,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(52, 20);
+            label1.Size = new Size(77, 20);
             label1.TabIndex = 38;
-            label1.Text = "Логин";
+            label1.Text = "Название";
             // 
             // dateTimePicker1
             // 

@@ -95,6 +95,7 @@
             button3.TabIndex = 27;
             button3.Text = "Очистить параметры поиска";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -104,6 +105,7 @@
             button2.TabIndex = 26;
             button2.Text = "Поиск";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox2
             // 
@@ -153,7 +155,7 @@
             contextMenuStrip1.ImageScalingSize = new Size(20, 20);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(211, 104);
+            contextMenuStrip1.Size = new Size(148, 76);
             // 
             // toolStripMenuItem1
             // 
@@ -165,14 +167,14 @@
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(210, 24);
+            toolStripMenuItem2.Size = new Size(147, 24);
             toolStripMenuItem2.Text = "Изменить";
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(210, 24);
+            toolStripMenuItem3.Size = new Size(147, 24);
             toolStripMenuItem3.Text = "Удалить";
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
