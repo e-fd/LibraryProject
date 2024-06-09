@@ -32,3 +32,4 @@ C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-window
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.Properties.Resources.resources
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.EditBook.resources
 C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.EditUser.resources
+C:\Users\lenaf\db\LibraryProject\LibraryProject1\Library\obj\Debug\net8.0-windows\Library.EditEvent.resources

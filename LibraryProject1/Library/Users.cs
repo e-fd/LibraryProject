@@ -36,6 +36,7 @@ namespace Library
         SqlConnection string_con = new SqlConnection();
         SqlCommand sql_command = new SqlCommand();
         SqlDataReader reader;
+        static string temp;
         public Users()
         {
             InitializeComponent();
@@ -99,12 +100,37 @@ namespace Library
             {
                 if (listView1.SelectedItems.Count > 0)
                 {
-                    //int temp = listView1.SelectedItems[0].Index;
+                    /*int temp = listView1.SelectedItems[0].Index;
                     int temp = listView1.Items.IndexOf(listView1.SelectedItems[0]);
                     sql_command = new SqlCommand($"delete from Users where UserID={temp + 1}", string_con);
                     string_con.Open();
                     sql_command.ExecuteNonQuery();
-                    string_con.Close();
+                    string_con.Close();*/
+                    ListViewItem selectedItem = listView1.SelectedItems[0];
+                    using (sql_command = new SqlCommand($"select UserID from Users where UserID={selectedItem.Text}", string_con))
+                    {
+                        string_con.Open();
+                        using (reader = sql_command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                temp = reader.GetString(0);
+                            }
+                        }
+                        string_con.Close();
+                    }
+                    using (sql_command = new SqlCommand($"delete from EventHistory where User_ID={temp}", string_con))
+                    {
+                        string_con.Open();
+                        sql_command.ExecuteNonQuery();
+                        string_con.Close();
+                    }
+                    using (sql_command = new SqlCommand($"delete from Users where UserID={temp}", string_con))
+                    {
+                        string_con.Open();
+                        sql_command.ExecuteNonQuery();
+                        string_con.Close();
+                    }
                 }
                 string_con.Open();
                 updateUserListView();
@@ -114,7 +140,7 @@ namespace Library
 
         public void updateUserListView()
         {
-            using (sql_command = new SqlCommand("select * from Users", string_con))
+            using (sql_command = new SqlCommand("select UserID,Login,Name,Phone,Address from Users", string_con))
             {
                 using (reader = sql_command.ExecuteReader())
                 {
@@ -181,21 +207,21 @@ namespace Library
                 string_con.Open();
                 if (textBox1.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select * from Users where cast (Name as nvarchar(100)) = '{textBox1.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Name as nvarchar(100)) = '{textBox1.Text}'", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox2.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select * from Users where cast (Login as nvarchar(100)) = '{textBox2.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Login as nvarchar(100)) = '{textBox2.Text}'", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox3.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select * from Users where cast (Phone as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Phone as nvarchar(100)) = '{textBox3.Text}'", string_con))
                     {
                         readQueryResult();
                     }

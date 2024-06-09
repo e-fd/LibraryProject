@@ -12,6 +12,35 @@ namespace Library
         public AddBook()
         {
             InitializeComponent();
+            comboBox1.Items.Clear(); // очистка списка жанров книг
+            comboBox1.Items.Add("");                           // добавление жанров книг
+            comboBox1.Items.Add("Роман-эпопея");               //
+            comboBox1.Items.Add("Роман");                      //
+            comboBox1.Items.Add("Повесть");                    //
+            comboBox1.Items.Add("Рассказ");                    //
+            comboBox1.Items.Add("Притча");                     //
+            comboBox1.Items.Add("Лирическое стихотворение");   //
+            comboBox1.Items.Add("Элегия");                     //
+            comboBox1.Items.Add("Послание");                   //
+            comboBox1.Items.Add("Эпиграмма");                  //
+            comboBox1.Items.Add("Ода");                        //
+            comboBox1.Items.Add("Сонет");                      //
+            comboBox1.Items.Add("Комедия");                    //
+            comboBox1.Items.Add("Трагедия");                   //
+            comboBox1.Items.Add("Драма");                      //
+            comboBox1.Items.Add("Поэма");                      //
+            comboBox1.Items.Add("Баллада");                    //
+            comboBox1.SelectedIndex = 0;    // индекс изначально выбранного элемента
+            comboBox2.Items.Clear(); // очистка списка жанров книг
+            comboBox2.Items.Add("");                           // добавление жанров книг
+            comboBox2.Items.Add("Художественная литература");               //
+            comboBox2.Items.Add("Документальная проза");               //
+            comboBox2.Items.Add("Мемуарная литература\r\n");               //
+            comboBox2.Items.Add("Научная и научно-популярная литература");               //
+            comboBox2.Items.Add("Справочная литература");               //
+            comboBox2.Items.Add("Учебная литература");               //
+            comboBox2.SelectedIndex = 0;    // индекс изначально выбранного элемента
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
