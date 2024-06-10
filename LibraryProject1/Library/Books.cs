@@ -43,46 +43,51 @@ namespace Library
         public Books()
         {
             InitializeComponent();
-            comboBox1.Items.Clear(); // очистка списка жанров книг
-            comboBox1.Items.Add("");                           // добавление жанров книг
-            comboBox1.Items.Add("Художественная литература");               //
-            comboBox1.Items.Add("Документальная проза");               //
-            comboBox1.Items.Add("Мемуарная литература");               //
-            comboBox1.Items.Add("Научная и научно-популярная литература");               //
-            comboBox1.Items.Add("Справочная литература");               //
-            comboBox1.Items.Add("Учебная литература");               //
-            comboBox1.SelectedIndex = 0;    // индекс изначально выбранного элемента
-
+            comboBox1.Items.Clear(); // очистка списка типов книг
+            comboBox1.Items.Add("");                           // добавление типов книг
+            {
+                comboBox1.Items.Add("Художественная литература");
+                comboBox1.Items.Add("Документальная проза");
+                comboBox1.Items.Add("Мемуарная литература");
+                comboBox1.Items.Add("Научная и научно-популярная литература");
+                comboBox1.Items.Add("Справочная литература");
+                comboBox1.Items.Add("Учебная литература");
+                comboBox1.SelectedIndex = 0;    // индекс изначально выбранного элемента
+            }
             comboBox2.Items.Clear(); // очистка списка жанров книг
             comboBox2.Items.Add("");                           // добавление жанров книг
-            comboBox2.Items.Add("Роман-эпопея");               //
-            comboBox2.Items.Add("Роман");                      //
-            comboBox2.Items.Add("Повесть");                    //
-            comboBox2.Items.Add("Рассказ");                    //
-            comboBox2.Items.Add("Притча");                     //
-            comboBox2.Items.Add("Лирическое стихотворение");   //
-            comboBox2.Items.Add("Элегия");                     //
-            comboBox2.Items.Add("Послание");                   //
-            comboBox2.Items.Add("Эпиграмма");                  //
-            comboBox2.Items.Add("Ода");                        //
-            comboBox2.Items.Add("Сонет");                      //
-            comboBox2.Items.Add("Комедия");                    //
-            comboBox2.Items.Add("Трагедия");                   //
-            comboBox2.Items.Add("Драма");                      //
-            comboBox2.Items.Add("Поэма");                      //
-            comboBox2.Items.Add("Баллада");                    //
-            comboBox2.SelectedIndex = 0;    // индекс изначально выбранного элемента
+            {
+                comboBox2.Items.Add("Роман-эпопея");               //
+                comboBox2.Items.Add("Роман");                      //
+                comboBox2.Items.Add("Повесть");                    //
+                comboBox2.Items.Add("Рассказ");                    //
+                comboBox2.Items.Add("Притча");                     //
+                comboBox2.Items.Add("Лирическое стихотворение");   //
+                comboBox2.Items.Add("Элегия");                     //
+                comboBox2.Items.Add("Послание");                   //
+                comboBox2.Items.Add("Эпиграмма");                  //
+                comboBox2.Items.Add("Ода");                        //
+                comboBox2.Items.Add("Сонет");                      //
+                comboBox2.Items.Add("Комедия");                    //
+                comboBox2.Items.Add("Трагедия");                   //
+                comboBox2.Items.Add("Драма");                      //
+                comboBox2.Items.Add("Поэма");                      //
+                comboBox2.Items.Add("Баллада");                    //
+                comboBox2.SelectedIndex = 0;    // индекс изначально выбранного элемента
+            }
             listView1.Columns.Clear();
             listView1.Columns.Add("№", 70);
-            listView1.Columns.Add("Название", 140);
-            listView1.Columns.Add("Автор", 140);
-            listView1.Columns.Add("Жанр", 140);
-            listView1.Columns.Add("Тип", 140);
-            listView1.Columns.Add("Год", 70);
-            listView1.Columns.Add("Издатель", 140);
-            listView1.Columns.Add("Количество", 100);
-            listView1.Columns.Add("ISBN", 140);
-            listView1.Columns.Add("Аннотация", 200);
+            listView1.Columns.Add("Название", 140);             // добавление колонок в таблицу
+            {
+                listView1.Columns.Add("Автор", 140);
+                listView1.Columns.Add("Жанр", 140);
+                listView1.Columns.Add("Тип", 140);
+                listView1.Columns.Add("Год", 70);
+                listView1.Columns.Add("Издатель", 140);
+                listView1.Columns.Add("Количество", 100);
+                listView1.Columns.Add("ISBN", 140);
+                listView1.Columns.Add("Аннотация", 200);
+            }
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();
@@ -227,8 +232,6 @@ namespace Library
             {
                 if (listView1.SelectedItems.Count > 0)
                 {
-                    //int temp = listView1.SelectedItems[0].Index;
-                    //int temp = listView1.Items.IndexOf(listView1.SelectedItems[0]);
                     ListViewItem selectedItem = listView1.SelectedItems[0];
                     using (sql_command = new SqlCommand($"select BookID from Books where BookID={selectedItem.Text}", string_con))
                     {
