@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\books.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\eventhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\eventhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\eventhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\library\\eventhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\eventhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\editevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\editevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|c:\\users\\lenaf\\db\\libraryproject\\libraryproject1\\library\\addbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{447DDF69-DECA-4D94-8E61-148FEECC2413}|Library\\Library.csproj|solutionrelative:library\\addbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,18 +39,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
-              "RelativeDocumentMoniker": "Library\\Books.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "RelativeToolTip": "Library\\Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T04:39:10.15Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
             },
             {
               "$type": "Bookmark",
@@ -58,41 +50,65 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EventHistory.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EventHistory.cs",
+              "RelativeDocumentMoniker": "Library\\EventHistory.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EventHistory.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "Library\\EventHistory.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T11:42:03.053Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
+              "RelativeDocumentMoniker": "Library\\Books.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "Library\\Books.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T04:39:10.15Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Books.cs",
               "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
               "RelativeDocumentMoniker": "Library\\Books.cs",
               "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\Books.cs",
               "RelativeToolTip": "Library\\Books.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPoAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T04:06:51.834Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EventHistory.cs",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EventHistory.cs",
-              "RelativeDocumentMoniker": "Library\\EventHistory.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EventHistory.cs",
-              "RelativeToolTip": "Library\\EventHistory.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAA4wAoBAAAqAQAA",
+              "DocumentIndex": 4,
+              "Title": "AddBook.cs",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\AddBook.cs",
+              "RelativeDocumentMoniker": "Library\\AddBook.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\AddBook.cs",
+              "RelativeToolTip": "Library\\AddBook.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T03:29:29.419Z",
+              "WhenOpened": "2024-06-13T08:10:28.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "EditEvent.cs",
-              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EditEvent.cs",
-              "RelativeDocumentMoniker": "Library\\EditEvent.cs",
-              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EditEvent.cs",
-              "RelativeToolTip": "Library\\EditEvent.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAFYAAAA4AAAA",
+              "Title": "EventHistory.cs",
+              "DocumentMoniker": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EventHistory.cs",
+              "RelativeDocumentMoniker": "Library\\EventHistory.cs",
+              "ToolTip": "C:\\Users\\lenaf\\db\\LibraryProject\\LibraryProject1\\Library\\EventHistory.cs",
+              "RelativeToolTip": "Library\\EventHistory.cs",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAuwKYAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T18:09:16.815Z",
+              "WhenOpened": "2024-06-13T03:29:29.419Z",
               "EditorCaption": ""
             }
           ]

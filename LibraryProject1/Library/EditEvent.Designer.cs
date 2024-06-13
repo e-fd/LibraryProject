@@ -195,6 +195,7 @@
             button3.TabIndex = 52;
             button3.Text = "Поиск";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // panel2
             // 
@@ -217,6 +218,7 @@
             button4.TabIndex = 48;
             button4.Text = "Поиск";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // label7
             // 
@@ -261,6 +263,7 @@
             listView1.Size = new Size(521, 525);
             listView1.TabIndex = 57;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.Click += listView1_Click_1;
             // 
             // EditEvent
             // 

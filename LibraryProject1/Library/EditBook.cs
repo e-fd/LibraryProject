@@ -45,7 +45,7 @@ namespace Library
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();
-                using (sql_command = new SqlCommand($"select Title,Author,Genre,Type,Year,Publisher,Count,ISBN,Summary from Books where BookID={dbIndex}", string_con))
+                using (sql_command = new SqlCommand($"select Title,Author,Genre,Type,Count,Year,Publisher,ISBN,Summary from Books where BookID={dbIndex}", string_con))
                 {
                     using (reader = sql_command.ExecuteReader())
                     {

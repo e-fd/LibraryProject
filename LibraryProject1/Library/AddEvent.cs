@@ -19,7 +19,7 @@ namespace Library
             comboBox1.Items.Add("Выдана");
         }
 
-        public void readBookResult() // чтение результата запроса таблиа книги
+        public void readBookResult() // чтение результата запроса таблица книги
         {
             using (reader = sql_command.ExecuteReader())
             {
@@ -131,7 +131,7 @@ namespace Library
                         {
                             while (reader.Read())
                             {
-                                EventID = Int32.Parse(reader.GetString(0)) + 1;
+                                EventID = reader.GetInt32(0) + 1;
                                 strEventID = EventID.ToString();
                             }
                         }
