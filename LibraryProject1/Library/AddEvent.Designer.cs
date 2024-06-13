@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEvent));
             button1 = new Button();
             textBox5 = new TextBox();
             label5 = new Label();
@@ -278,6 +279,8 @@
             Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(button1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "AddEvent";
             Text = "Добавление нового события";
             panel1.ResumeLayout(false);

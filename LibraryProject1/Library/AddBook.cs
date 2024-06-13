@@ -30,19 +30,19 @@ namespace Library
             comboBox1.Items.Add("Драма");                      //
             comboBox1.Items.Add("Поэма");                      //
             comboBox1.Items.Add("Баллада");                    //
-            comboBox1.SelectedIndex = 0;    // индекс изначально выбранного элемента
+            comboBox1.SelectedIndex = 0; // индекс изначально выбранного элемента
             comboBox2.Items.Clear(); // очистка списка жанров книг
-            comboBox2.Items.Add("");                           // добавление жанров книг
-            comboBox2.Items.Add("Художественная литература");               //
-            comboBox2.Items.Add("Документальная проза");               //
-            comboBox2.Items.Add("Мемуарная литература\r\n");               //
-            comboBox2.Items.Add("Научная и научно-популярная литература");               //
-            comboBox2.Items.Add("Справочная литература");               //
-            comboBox2.Items.Add("Учебная литература");               //
+            comboBox2.Items.Add("");                           // добавление типов книг
+            comboBox2.Items.Add("Художественная литература");
+            comboBox2.Items.Add("Документальная проза");
+            comboBox2.Items.Add("Мемуарная литература");
+            comboBox2.Items.Add("Научная и научно-популярная литература");
+            comboBox2.Items.Add("Справочная литература");
+            comboBox2.Items.Add("Учебная литература");
             comboBox2.SelectedIndex = 0;    // индекс изначально выбранного элемента
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // добавление
         {
             int BookID;
             string sql;
@@ -51,16 +51,15 @@ namespace Library
                 using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
                 {
                     string_con.Open();
-                    using (sql_command = new SqlCommand("select top (1) [BookID] FROM [LibraryProject1].[dbo].[Books] order by [BookID] desc", string_con))
+                    using (sql_command = new SqlCommand("select max(convert(int, convert(nvarchar(30), BookID))) from Books", string_con))
                     {
                         using (reader = sql_command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                BookID = Int32.Parse(reader.GetString(0)) + 1;
+                                BookID = reader.GetInt32(0) + 1;
                                 strBookID = BookID.ToString();
                             }
-                        }
                         sql = "INSERT INTO Books " +
                         "(BookID,Title,Author,Genre,Type,Count,Year,Publisher,ISBN,Summary) " +
                         "VALUES ('" + strBookID + "','"
@@ -69,7 +68,14 @@ namespace Library
                         "','" + textBox5.Text + "','" + textBox6.Text +
                         "','" + textBox7.Text + "','" + textBox8.Text +
                         "','" + richTextBox1.Text + "');";
+                        }
                     }
+                    /*using (sql_command = new SqlCommand("select top (1) BookID FROM Books order by BookID asc", string_con))
+                    {
+                        using (reader = sql_command.ExecuteReader())
+                        {
+                        }
+                    }*/
                     using (sql_command1 = new SqlCommand(sql, string_con))
                     {
                         sql_command1.ExecuteNonQuery();
@@ -84,7 +90,7 @@ namespace Library
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // отмена
         {
             this.Close();
         }

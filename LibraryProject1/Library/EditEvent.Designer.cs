@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditEvent));
             button1 = new Button();
             textBox5 = new TextBox();
             label5 = new Label();
@@ -45,8 +46,8 @@
             panel1 = new Panel();
             button3 = new Button();
             panel2 = new Panel();
-            label7 = new Label();
             button4 = new Button();
+            label7 = new Label();
             label8 = new Label();
             comboBox1 = new ComboBox();
             label9 = new Label();
@@ -208,15 +209,6 @@
             panel2.Size = new Size(459, 166);
             panel2.TabIndex = 53;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(3, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(117, 20);
-            label7.TabIndex = 0;
-            label7.Text = "Поиск по книге";
-            // 
             // button4
             // 
             button4.Location = new Point(362, 134);
@@ -225,6 +217,15 @@
             button4.TabIndex = 48;
             button4.Text = "Поиск";
             button4.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(3, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(117, 20);
+            label7.TabIndex = 0;
+            label7.Text = "Поиск по книге";
             // 
             // label8
             // 
@@ -261,7 +262,7 @@
             listView1.TabIndex = 57;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // AddEvent
+            // EditEvent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -275,6 +276,8 @@
             Controls.Add(button2);
             Controls.Add(dateTimePicker1);
             Controls.Add(button1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "EditEvent";
             Text = "Изменение события";
             panel1.ResumeLayout(false);

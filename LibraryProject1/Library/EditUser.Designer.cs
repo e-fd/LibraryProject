@@ -139,6 +139,7 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            MaximizeBox = false;
             Name = "EditUser";
             Text = "Редактирование пользователя";
             ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
             button1 = new Button();
             textBox5 = new TextBox();
             label5 = new Label();
@@ -139,6 +140,8 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "AddUser";
             Text = "Добавление нового пользователя";
             ResumeLayout(false);

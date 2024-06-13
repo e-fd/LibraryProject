@@ -14,6 +14,7 @@ namespace Library
             InitializeComponent();
             index = dbIndex;
             object tmp;
+            /////////// заполнение полей
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();
@@ -46,7 +47,7 @@ namespace Library
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // сохранение
         {
             sql = "UPDATE Users " +
             "SET Login = '" + textBox1.Text + "', Name = '" + textBox2.Text + "', Phone = '"
@@ -63,7 +64,7 @@ namespace Library
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // отмена
         {
             this.Close();
         }

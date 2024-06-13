@@ -1,33 +1,4 @@
-﻿/*
-SqlConnection string_con = new SqlConnection();
-SqlCommand sql_command = new SqlCommand();
-SqlDataReader reader;
- */
-
-/*
-using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
-{
-    string_con.Open();
-    using (sql_command = new SqlCommand("", string_con))
-    {
-        using (reader = sql_command.ExecuteReader())
-        {
-            
-        }
-    }
-    string_con.Close();
-}
-*/
-
-/*
-using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
-{
-    string_con.Open();
-    updateUserListView();
-    string_con.Close();
-}
-*/
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Library
 {
@@ -41,6 +12,34 @@ namespace Library
         public EventHistory()
         {
             InitializeComponent();
+            comboBox1.Items.Clear(); // очистка списка типов книг
+            comboBox1.Items.Add("");                           // добавление типов книг
+            comboBox1.Items.Add("Художественная литература");
+            comboBox1.Items.Add("Документальная проза");
+            comboBox1.Items.Add("Мемуарная литература");
+            comboBox1.Items.Add("Научная и научно-популярная литература");
+            comboBox1.Items.Add("Справочная литература");
+            comboBox1.Items.Add("Учебная литература");
+            comboBox1.SelectedIndex = 0;    // индекс изначально выбранного элемента
+            comboBox2.Items.Clear(); // очистка списка жанров книг
+            comboBox2.Items.Add("");                           // добавление жанров книг
+            comboBox2.Items.Add("Роман-эпопея");               //
+            comboBox2.Items.Add("Роман");                      //
+            comboBox2.Items.Add("Повесть");                    //
+            comboBox2.Items.Add("Рассказ");                    //
+            comboBox2.Items.Add("Притча");                     //
+            comboBox2.Items.Add("Лирическое стихотворение");   //
+            comboBox2.Items.Add("Элегия");                     //
+            comboBox2.Items.Add("Послание");                   //
+            comboBox2.Items.Add("Эпиграмма");                  //
+            comboBox2.Items.Add("Ода");                        //
+            comboBox2.Items.Add("Сонет");                      //
+            comboBox2.Items.Add("Комедия");                    //
+            comboBox2.Items.Add("Трагедия");                   //
+            comboBox2.Items.Add("Драма");                      //
+            comboBox2.Items.Add("Поэма");                      //
+            comboBox2.Items.Add("Баллада");                    //
+            comboBox2.SelectedIndex = 0;    // индекс изначально выбранного элемента
             dateTimePicker1.Value = dateTimePicker1.MinDate;
             listView1.Columns.Clear();
             listView1.Columns.Add("№", 60);
@@ -58,12 +57,12 @@ namespace Library
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) // доп параметры поиска
         {
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e) // доп параметры поиска
         {
             if (isCollapsed)
             {
@@ -92,14 +91,14 @@ namespace Library
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) // обратно в меню
         {
             this.Close();
         }
 
-        public void updateEventListView()
+        public void updateEventListView() // обновление таблицы событий
         {
-            using (sql_command = new SqlCommand("select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID", string_con))
+            using (sql_command = new SqlCommand("select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
             {
                 using (reader = sql_command.ExecuteReader())
                 {
@@ -122,7 +121,7 @@ namespace Library
             listView1.View = View.Details;
         }
 
-        public void readQueryResult()
+        public void readQueryResult() // чтение результата запроса
         {
             using (reader = sql_command.ExecuteReader())
             {
@@ -143,7 +142,7 @@ namespace Library
             }
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_Click(object sender, EventArgs e) // добавление
         {
             AddEvent form9 = new AddEvent();
             DialogResult form9Closed = form9.ShowDialog();
@@ -158,7 +157,7 @@ namespace Library
             }
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void toolStripMenuItem2_Click(object sender, EventArgs e) // изменение
         {
             try
             {
@@ -178,7 +177,7 @@ namespace Library
             catch { }
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void toolStripMenuItem3_Click(object sender, EventArgs e) // удаление
         {
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
@@ -216,87 +215,86 @@ namespace Library
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // поиск
         {
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();
                 if (textBox1.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Name as nvarchar(100)) = '{textBox1.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Name as nvarchar(100)) like '%{textBox1.Text}%' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox2.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Login as nvarchar(100)) = '{textBox2.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Login as nvarchar(100)) like '%{textBox2.Text}%' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox3.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Phone as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Phone as nvarchar(100)) = '{textBox3.Text}' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox4.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Title as nvarchar(100)) = '{textBox4.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Title as nvarchar(100)) like '%{textBox4.Text}%' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox5.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Year as nvarchar(100)) = '{textBox5.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Year as nvarchar(100)) = '{textBox5.Text}' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox6.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (ISBN as nvarchar(100)) = '{textBox6.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (ISBN as nvarchar(100)) = '{textBox6.Text}' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox7.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Author as nvarchar(100)) = '{textBox7.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Author as nvarchar(100)) like '%{textBox7.Text}%' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (comboBox1.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Type as nvarchar(100)) = '{comboBox1.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Type as nvarchar(100)) = '{comboBox1.Text}' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (comboBox2.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Genre as nvarchar(100)) = '{comboBox2.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Genre as nvarchar(100)) = '{comboBox2.Text}' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (dateTimePicker1.Value != dateTimePicker1.MinDate)
                 {
-                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Date as nvarchar(100)) = '{dateTimePicker1.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select EventID, Title, Author, Name, Login, Phone, Date from EventHistory left join Books on EventHistory.Book_ID=Books.BookID left join Users on EventHistory.User_ID=Users.UserID where cast (Date as nvarchar(100)) = '{dateTimePicker1.Text}' order by case when ISNUMERIC(EventID) = 1 then 0 else 1 end, case when isnumeric(EventID) = 1 then cast(EventID as int) else 0 end, EventID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 string_con.Close();
             }
-
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // очистка параметров поиска
         {
             textBox1.Text = "";
             textBox2.Text = "";
@@ -305,6 +303,8 @@ namespace Library
             textBox5.Text = "";
             textBox6.Text = "";
             textBox7.Text = "";
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
             dateTimePicker1.Value = dateTimePicker1.MinDate;
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {

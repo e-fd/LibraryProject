@@ -1,33 +1,4 @@
-﻿/*
-SqlConnection string_con = new SqlConnection();
-SqlCommand sql_command = new SqlCommand();
-SqlDataReader reader;
- */
-
-/*
-using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
-{
-    string_con.Open();
-    using (sql_command = new SqlCommand("", string_con))
-    {
-        using (reader = sql_command.ExecuteReader())
-        {
-            
-        }
-    }
-    string_con.Close();
-}
-*/
-
-/*
-using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
-{
-    string_con.Open();
-    updateUserListView();
-    string_con.Close();
-}
-*/
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Library
 {
@@ -54,12 +25,12 @@ namespace Library
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) // обратно в меню
         {
             this.Close();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_Click(object sender, EventArgs e) // добавление
         {
             AddUser form5 = new AddUser();
             DialogResult form5Closed = form5.ShowDialog();
@@ -74,7 +45,7 @@ namespace Library
             }
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void toolStripMenuItem2_Click(object sender, EventArgs e) // изменение
         {
             try
             {
@@ -94,7 +65,7 @@ namespace Library
             catch { }
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void toolStripMenuItem3_Click(object sender, EventArgs e) // удаление
         {
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
@@ -138,9 +109,9 @@ namespace Library
             }
         }
 
-        public void updateUserListView()
+        public void updateUserListView() // обновление таблицы пользователей
         {
-            using (sql_command = new SqlCommand("select UserID,Login,Name,Phone,Address from Users", string_con))
+            using (sql_command = new SqlCommand("select UserID,Login,Name,Phone,Address from Users order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
             {
                 using (reader = sql_command.ExecuteReader())
                 {
@@ -163,7 +134,7 @@ namespace Library
             listView1.View = View.Details;
         }
 
-        public void readQueryResult()
+        public void readQueryResult() // чтение результата запроса
         {
             using (reader = sql_command.ExecuteReader())
             {
@@ -184,7 +155,7 @@ namespace Library
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) // обновление таблицы
         {
             listView1.Columns.Clear();
             listView1.Columns.Add("№", 70);
@@ -200,28 +171,28 @@ namespace Library
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // поиск
         {
             using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
             {
                 string_con.Open();
                 if (textBox1.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Name as nvarchar(100)) = '{textBox1.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Name as nvarchar(100)) like '%{textBox1.Text}%' order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox2.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Login as nvarchar(100)) = '{textBox2.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Login as nvarchar(100)) like '%{textBox2.Text}%' order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
                     {
                         readQueryResult();
                     }
                 }
                 if (textBox3.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Phone as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Phone as nvarchar(100)) = '{textBox3.Text}' order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
                     {
                         readQueryResult();
                     }
@@ -230,7 +201,7 @@ namespace Library
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) // очистка параметров поиска
         {
             textBox1.Text = "";
             textBox2.Text = "";

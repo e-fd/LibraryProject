@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -71,6 +72,8 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "Main";
             Text = "Главное меню";
             ResumeLayout(false);

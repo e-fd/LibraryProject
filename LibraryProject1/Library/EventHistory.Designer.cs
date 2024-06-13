@@ -404,6 +404,7 @@
             Controls.Add(listView1);
             Controls.Add(button3);
             Controls.Add(button2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "EventHistory";
             Text = "История пользования";
             WindowState = FormWindowState.Maximized;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBook));
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -242,6 +243,8 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "AddBook";
             Text = "Добавление новой книги";
             ResumeLayout(false);

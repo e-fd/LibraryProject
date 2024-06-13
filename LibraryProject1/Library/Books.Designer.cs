@@ -307,6 +307,7 @@ namespace Library
             Controls.Add(button6);
             Controls.Add(listView1);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Books";
             Text = "Книги";
             WindowState = FormWindowState.Maximized;

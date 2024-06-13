@@ -16,10 +16,10 @@ namespace Library
             InitializeComponent();
             comboBox1.Items.Clear();
             comboBox1.Items.Add("Сдана");
-            comboBox1.Items.Add("Забрана");
+            comboBox1.Items.Add("Выдана");
         }
 
-        public void readBookResult()
+        public void readBookResult() // чтение результата запроса таблиа книги
         {
             using (reader = sql_command.ExecuteReader())
             {
@@ -40,7 +40,7 @@ namespace Library
             }
         }
 
-        public void readUserResult()
+        public void readUserResult() // чтение результата запроса таблица пользователи
         {
             using (reader = sql_command.ExecuteReader())
             {
@@ -61,9 +61,9 @@ namespace Library
             }
         }
 
-        public void updateUserListView()
+        public void updateUserListView() // обновление таблицы пользователей
         {
-            using (sql_command = new SqlCommand("select UserID,Login,Name,Phone,Address from Users", string_con))
+            using (sql_command = new SqlCommand("select UserID,Login,Name,Phone,Address from Users order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
             {
                 using (reader = sql_command.ExecuteReader())
                 {
@@ -86,9 +86,9 @@ namespace Library
             listView1.View = View.Details;
         }
 
-        public void updateBookListView()
+        public void updateBookListView() // обновление таблицы книг
         {
-            using (sql_command = new SqlCommand("select * from Books", string_con))
+            using (sql_command = new SqlCommand("select * from Books order by case when ISNUMERIC(BookID) = 1 then 0 else 1 end, case when isnumeric(BookID) = 1 then cast(BookID as int) else 0 end, BookID", string_con))
             {
                 using (reader = sql_command.ExecuteReader())
                 {
@@ -111,12 +111,12 @@ namespace Library
             listView1.View = View.Details;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // отмена
         {
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // сохранение
         {
             string sql;
             int EventID;
@@ -125,7 +125,7 @@ namespace Library
                 using (string_con = new SqlConnection("Server=X923;Database=LibraryProject1;Trusted_Connection=True;"))
                 {
                     string_con.Open();
-                    using (sql_command = new SqlCommand("select top (1) [EventID] FROM [LibraryProject1].[dbo].[EventHistory] order by [EventID] desc", string_con))
+                    using (sql_command = new SqlCommand("select max(convert(int, convert(nvarchar(30), EventID))) from EventHistory", string_con))
                     {
                         using (reader = sql_command.ExecuteReader())
                         {
@@ -173,21 +173,21 @@ namespace Library
                 string_con.Open();
                 if (textBox1.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Name as nvarchar(100)) = '{textBox1.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Name as nvarchar(100)) = '{textBox1.Text}' order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
                     {
                         readUserResult();
                     }
                 }
                 if (textBox2.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Login as nvarchar(100)) = '{textBox2.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Login as nvarchar(100)) = '{textBox2.Text}' order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
                     {
                         readUserResult();
                     }
                 }
                 if (textBox3.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Phone as nvarchar(100)) = '{textBox3.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select UserID,Login,Name,Phone,Address from Users where cast (Phone as nvarchar(100)) = '{textBox3.Text}' order by case when ISNUMERIC(UserID) = 1 then 0 else 1 end, case when isnumeric(UserID) = 1 then cast(UserID as int) else 0 end, UserID", string_con))
                     {
                         readUserResult();
                     }
@@ -220,14 +220,14 @@ namespace Library
                 string_con.Open();
                 if (textBox4.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select * from Books where cast (Title as nvarchar(100)) = '{textBox4.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Title as nvarchar(100)) = '{textBox4.Text}' order by case when ISNUMERIC(BookID) = 1 then 0 else 1 end, case when isnumeric(BookID) = 1 then cast(BookID as int) else 0 end, BookID", string_con))
                     {
                         readBookResult();
                     }
                 }
                 if (textBox5.Text.Length > 0)
                 {
-                    using (sql_command = new SqlCommand($"select * from Books where cast (Author as nvarchar(100)) = '{textBox5.Text}'", string_con))
+                    using (sql_command = new SqlCommand($"select * from Books where cast (Author as nvarchar(100)) = '{textBox5.Text}' order by case when ISNUMERIC(BookID) = 1 then 0 else 1 end, case when isnumeric(BookID) = 1 then cast(BookID as int) else 0 end, BookID", string_con))
                     {
                         readBookResult();
                     }
@@ -236,10 +236,10 @@ namespace Library
             }
         }
 
-        private void listView1_Click(object sender, EventArgs e)
+        private void listView1_Click(object sender, EventArgs e) // выбор элемента таблицы
         {
             object tmp;
-            if (listView1.Columns.Count == 5)
+            if (listView1.Columns.Count == 5) // пользователи
             {
                 if (listView1.SelectedItems.Count > 0)
                 {
@@ -273,7 +273,7 @@ namespace Library
                     }
                 }
             }
-            if (listView1.Columns.Count == 10)
+            if (listView1.Columns.Count == 10) // книги
             {
                 if (listView1.SelectedItems.Count > 0)
                 {

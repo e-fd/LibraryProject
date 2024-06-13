@@ -30,6 +30,7 @@ namespace Library
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditBook));
             label1 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
@@ -244,6 +245,8 @@ namespace Library
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "EditBook";
             Text = "Редактирование книги";
             ResumeLayout(false);
